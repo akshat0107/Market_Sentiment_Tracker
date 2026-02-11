@@ -1043,7 +1043,7 @@ If you found this project helpful, please consider:
 
 <div align="center">
 
-Built with ❤️ by Akshat Gupta
+Built by Akshat Gupta
 
 [⬆ Back to Top](#-market-sentiment-tracker)
 
