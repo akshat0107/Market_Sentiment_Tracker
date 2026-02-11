@@ -28,6 +28,8 @@ text
 └─────────────┘     └─────────────┘     └─────────────┘
       Port              Port                Port
       8501              8000               27017
+
+
 Technology Stack
 Component	Technology	Purpose
 Frontend	Streamlit	Interactive dashboard UI
