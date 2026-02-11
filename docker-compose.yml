@@ -1,0 +1,35 @@
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d
+    
+  backend:
+    build: ./backend
+    container_name: fastapi-backend
+    depends_on:
+      - mongodb
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    
+  dashboard:
+    build: ./dashboard
+    container_name: streamlit-dashboard
+    depends_on:
+      - backend
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://fastapi-backend:8000
+
+volumes:
+  mongodb_data:
