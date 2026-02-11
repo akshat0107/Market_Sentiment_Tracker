@@ -1045,6 +1045,4 @@ If you found this project helpful, please consider:
 
 Built by Akshat Gupta
 
-[⬆ Back to Top](#-market-sentiment-tracker)
-
 </div>
