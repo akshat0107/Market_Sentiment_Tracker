@@ -73,7 +73,7 @@ with col2:
         st.rerun()
 
 with col3:
-    # st.metric("Last Updated ",st.session_state.last_update.strftime("%Y-%m-%d %H:%M:%S"))
+    
     st.write("Last updated:\n")
     st.markdown(
     f'<p style="font-size: 20px;">{st.session_state.last_update.strftime("%Y-%m-%d %H:%M:%S")}</p>', 
@@ -102,17 +102,7 @@ if st.session_state.data:
 
                 col_st, col_sentiment = st.columns(2)
 
-                if stock_data is not None:
-                    # for idx,(_,row) in enumerate(summary_df.iterrows()):
-                    #     with cols[idx]:
-                    #         sentiment_color = "green" if row['avg_sentiment']>0 else "red" if row['avg_sentiment']<0 else "gray"
-                            
-                    #         st.metric(
-                    #             label=row['ticker'],
-                    #             value = f"${row['latest_price']:.2f}",
-                    #             delta = f"{row['avg_sentiment']:.3f} sentiment"
-                    #         )
-                    
+                if stock_data is not None:                    
                         sentiment_color = "green" if stock_data.iloc[0]['avg_sentiment']>0 else "red" if stock_data.iloc[0]['avg_sentiment']<0 else "gray"
                         st.metric(label = stock_data.iloc[0]['ticker'],value = f"{stock_data.iloc[0]['latest_price']:.2f}",delta = f"{stock_data.iloc[0]['avg_sentiment']:.3f}")
                 else:
