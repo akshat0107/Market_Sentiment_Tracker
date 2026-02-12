@@ -20,13 +20,13 @@ if 'data' not in st.session_state:
 if 'last_update' not in st.session_state:
     st.session_state.last_update = datetime.now()
 
-st.title("📈 Market Sentiment Tracker")
+st.title("Market Sentiment Tracker")
 st.markdown("Real-time market data with sentiment analysis")
 
 st.sidebar.header("Controls")
 api_url = st.sidebar.text_input("API URL","http://fastapi-backend:8000")
 auto_refresh = st.sidebar.checkbox("Auto-refresh (10s)",True)
-refresh_btn = st.sidebar.button("🔄 Manual Refresh")
+refresh_btn = st.sidebar.button("Manual Refresh")
 
 def fetch_data():
     try:
