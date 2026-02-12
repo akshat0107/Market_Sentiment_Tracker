@@ -195,7 +195,7 @@ except:
 st.sidebar.markdown(f"Data Points: {len(st.session_state.data)}")
 
 if auto_refresh:
-    time.sleep(20)
+    time.sleep(10)
     st.rerun()
 
     
